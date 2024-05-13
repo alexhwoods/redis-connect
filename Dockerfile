@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 FROM golang:1.22
 
 WORKDIR /app
@@ -11,7 +9,7 @@ RUN go mod download
 COPY *.go ./
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /hello-redis
+RUN CGO_ENABLED=0 GOOS=linux go build -o /redis-connect
 
 # Run
-CMD ["/hello-redis"]
+CMD ["/redis-connect"]
